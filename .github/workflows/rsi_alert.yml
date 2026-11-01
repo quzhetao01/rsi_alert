@@ -1,0 +1,61 @@
+name: RSI alert
+
+on:
+  schedule:
+    # UTC. Weekdays only (1-5), so weekends never run. 13:17-21:17 UTC covers
+    # US market hours in both summer and winter time. Minute 17 avoids the
+    # busy top-of-hour queue.
+    - cron: "17 13-21 * * 1-5"
+  workflow_dispatch:  # manual run from the Actions tab
+    inputs:
+      mode:
+        description: "check = only send status changes (same as hourly); report = send current RSI of every ticker"
+        type: choice
+        options:
+          - check
+          - report
+        default: check
+
+permissions:
+  contents: write  # needed to commit rsi_state.json back to the repo
+
+concurrency:
+  group: rsi-alert
+  cancel-in-progress: false
+
+jobs:
+  check:
+    # Manual runs always go ahead. The hourly schedule is skipped only if you
+    # create a repository variable HOURLY_ENABLED with the value "false"
+    # (Settings > Secrets and variables > Actions > Variables).
+    if: github.event_name == 'workflow_dispatch' || vars.HOURLY_ENABLED != 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run RSI check
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          if [ "$MODE" = "report" ]; then
+            python rsi_alert.py --watchlist watchlist.json --report
+          else
+            python rsi_alert.py --watchlist watchlist.json
+          fi
+
+      - name: Save alert state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add rsi_state.json
+          git diff --cached --quiet || (git commit -m "Update RSI state" && git push)
