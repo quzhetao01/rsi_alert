@@ -5,7 +5,7 @@ on:
     # UTC. Weekdays only (1-5), so weekends never run. 13:17-21:17 UTC covers
     # US market hours in both summer and winter time. Minute 17 avoids the
     # busy top-of-hour queue.
-    - cron: "17 13-21 * * 1-5"
+    - cron: "*/10 * * * *"
   workflow_dispatch:  # manual run from the Actions tab
     inputs:
       mode:
