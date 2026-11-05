@@ -15,9 +15,9 @@
   "GOOGL|5Y": "near_oversold",
   "IBIT|1Y": "neutral",
   "IBIT|5Y": "neutral",
-  "MDB|1Y": "near_oversold",
+  "MDB|1Y": "neutral",
   "MDB|5Y": "neutral",
-  "META|1Y": "near_oversold",
+  "META|1Y": "neutral",
   "META|5Y": "neutral",
   "MSFT|1Y": "neutral",
   "MSFT|5Y": "near_overbought",
@@ -40,5 +40,5 @@
   "VOO|1Y": "neutral",
   "VOO|5Y": "neutral",
   "VST|1Y": "oversold",
-  "VST|5Y": "near_oversold"
+  "VST|5Y": "neutral"
 }
