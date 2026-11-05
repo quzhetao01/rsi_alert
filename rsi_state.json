@@ -12,10 +12,10 @@
   "D05.SI|1Y": "oversold",
   "D05.SI|5Y": "neutral",
   "GOOGL|1Y": "oversold",
-  "GOOGL|5Y": "neutral",
+  "GOOGL|5Y": "near_oversold",
   "IBIT|1Y": "neutral",
   "IBIT|5Y": "neutral",
-  "MDB|1Y": "neutral",
+  "MDB|1Y": "near_oversold",
   "MDB|5Y": "neutral",
   "META|1Y": "near_oversold",
   "META|5Y": "neutral",
@@ -25,7 +25,7 @@
   "NVDA|5Y": "neutral",
   "PLTR|1Y": "oversold",
   "PLTR|5Y": "neutral",
-  "QQQ|1Y": "near_oversold",
+  "QQQ|1Y": "oversold",
   "QQQ|5Y": "neutral",
   "SOXL|1Y": "oversold",
   "SOXL|5Y": "neutral",
@@ -39,6 +39,6 @@
   "USO|5Y": "neutral",
   "VOO|1Y": "neutral",
   "VOO|5Y": "neutral",
-  "VST|1Y": "near_oversold",
-  "VST|5Y": "neutral"
+  "VST|1Y": "oversold",
+  "VST|5Y": "near_oversold"
 }
