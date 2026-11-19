@@ -1,5 +1,5 @@
 {
-  "AAAU|1Y": "neutral",
+  "AAAU|1Y": "near_oversold",
   "AAAU|5Y": "near_oversold",
   "AAPL|1Y": "neutral",
   "AAPL|5Y": "near_overbought",
@@ -35,7 +35,7 @@
   "TSLA|5Y": "neutral",
   "TSM|1Y": "neutral",
   "TSM|5Y": "neutral",
-  "USO|1Y": "neutral",
+  "USO|1Y": "near_oversold",
   "USO|5Y": "neutral",
   "VOO|1Y": "neutral",
   "VOO|5Y": "neutral",
