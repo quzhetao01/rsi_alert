@@ -1,5 +1,5 @@
 {
-  "AAAU|1Y": "neutral",
+  "AAAU|1Y": "near_oversold",
   "AAAU|5Y": "neutral",
   "AAPL|1Y": "neutral",
   "AAPL|5Y": "neutral",
@@ -13,7 +13,7 @@
   "D05.SI|5Y": "neutral",
   "GOOGL|1Y": "neutral",
   "GOOGL|5Y": "neutral",
-  "IBIT|1Y": "near_oversold",
+  "IBIT|1Y": "oversold",
   "IBIT|5Y": "neutral",
   "MDB|1Y": "neutral",
   "MDB|5Y": "neutral",
