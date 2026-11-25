@@ -1,6 +1,6 @@
 {
   "AAAU|1Y": "oversold",
-  "AAAU|5Y": "oversold",
+  "AAAU|5Y": "near_oversold",
   "AAPL|1Y": "neutral",
   "AAPL|5Y": "neutral",
   "AMD|1Y": "neutral",
@@ -11,7 +11,7 @@
   "BBAI|5Y": "oversold",
   "D05.SI|1Y": "oversold",
   "D05.SI|5Y": "neutral",
-  "GOOGL|1Y": "near_oversold",
+  "GOOGL|1Y": "neutral",
   "GOOGL|5Y": "near_oversold",
   "IBIT|1Y": "oversold",
   "IBIT|5Y": "near_oversold",
